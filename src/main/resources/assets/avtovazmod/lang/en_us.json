@@ -1,0 +1,9 @@
+{
+  "itemGroup.avtovazmod.main": "AvtoVAZ Mod",
+  "item.avtovazmod.vaz2107_spawn": "VAZ-2107 \"Semyorka\"",
+  "item.avtovazmod.vaz_niva_spawn": "VAZ-2121 \"Niva\"",
+  "entity.avtovazmod.vaz2107": "VAZ-2107 \"Semyorka\"",
+  "entity.avtovazmod.vaz_niva": "VAZ-2121 \"Niva\"",
+  "message.avtovazmod.no_space": "Not enough room for the car here",
+  "subtitles.avtovazmod.car.engine": "Engine running"
+}

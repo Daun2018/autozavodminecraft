@@ -1,0 +1,8 @@
+{
+  "car.engine": {
+    "subtitle": "subtitles.avtovazmod.car.engine",
+    "sounds": [
+      "avtovazmod:car/engine"
+    ]
+  }
+}

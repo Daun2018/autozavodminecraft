@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "avtovazmod:item/vaz_niva_spawn"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "itemGroup.avtovazmod.main": "АвтоВАЗ Мод",
+  "item.avtovazmod.vaz2107_spawn": "ВАЗ-2107 «Семёрка»",
+  "item.avtovazmod.vaz_niva_spawn": "ВАЗ-2121 «Нива»",
+  "entity.avtovazmod.vaz2107": "ВАЗ-2107 «Семёрка»",
+  "entity.avtovazmod.vaz_niva": "ВАЗ-2121 «Нива»",
+  "message.avtovazmod.no_space": "Здесь не хватает места для машины",
+  "subtitles.avtovazmod.car.engine": "Работает двигатель"
+}

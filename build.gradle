@@ -1,0 +1,67 @@
+plugins {
+    id 'java-library'
+    id 'idea'
+    id 'net.neoforged.moddev' version '2.0.78'
+}
+
+version = mod_version
+group = mod_group_id
+
+base {
+    archivesName = mod_id
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+neoForge {
+    // Minecraft 1.21.1 <-> NeoForge 21.1.x. Точную версию можно поднять до последней 21.1.*
+    version = project.neo_version
+
+    // Access Transformer: открывает LivingEntity#jumping (пробел = ручник)
+    accessTransformers.from('src/main/resources/META-INF/accesstransformer.cfg')
+
+    runs {
+        client {
+            client()
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+        }
+        server {
+            server()
+            programArgument '--nogui'
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+        }
+    }
+
+    mods {
+        "${mod_id}" {
+            sourceSet(sourceSets.main)
+        }
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = 21
+}
+
+// Подстановка версий в neoforge.mods.toml
+tasks.named('processResources', ProcessResources).configure {
+    var replaceProperties = [
+            minecraft_version: minecraft_version,
+            neo_version      : neo_version,
+            mod_id           : mod_id,
+            mod_name         : mod_name,
+            mod_version      : mod_version
+    ]
+    inputs.properties replaceProperties
+    filesMatching(['META-INF/neoforge.mods.toml']) {
+        expand replaceProperties
+    }
+}
+
+idea {
+    module {
+        downloadSources = true
+        downloadJavadoc = true
+    }
+}
